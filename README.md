@@ -310,7 +310,7 @@ Chatter is compatible with all Okuma machines that support the MTConnect app.
 
    - Example Device Name: `http://[Your Machine IP]:5000/[Device Name]/probe`
    - Replace `[Your Machine IP]` and `[Device Name]` with your machine's IP address and device name, respectively.
-![Okuma Config Screen](images/okuma/okuma-device-config.png)
+![Okuma Config Screen](images/okuma/okuma-device-configuration.png)
 
 
 ### Setup

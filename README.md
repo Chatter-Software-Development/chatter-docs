@@ -136,6 +136,8 @@ Navigate to Settings > I/O tab, and under `RS-232 PORTS`, enter the following va
 | 143 | MACHINE DATA COLLECT    | ON     |
 | 187 | MACHINE DATA ECHO       | OFF    |
 
+![](images/haas-coldfire/haas-coldfire-rs232.png)
+
 ### Setup
 1) Plug the data cable (USB to RS232) in between the Chatterbox and the machine.
 2) Power on the Chatterbox.
@@ -241,9 +243,19 @@ DMG Mori CELOS controls connect with Chatter via the network and the MTConnect p
 
 ### Connect the Network Cable
 1. Connect the network cable as indicated in the machine's manual.
-   - Note that network configurations may vary between machines. Refer to the attached manual for more information on specific configurations.
+   
+   Note that network configurations may vary between machines. Refer to your machine's manual for more information on specific configurations.
+
+   Generally, your machine will have two network interfaces (purple), tied into one switch, as pictured below. This is the switch that you must connect your external ethernet line (blue, in thie photo) to in order to see both devices (ethernet X1 and X2) on the network.
+
+   ![](images/mori/mori-network-switch.png)
+
 
 ### Configure the Ethernet Interface
+Connection options will be found under the "Connector Management" app, signified by the below icon:
+
+<img src='images/mori/mori-connector-management.png' width='80px' />
+
 1. MTConnect communicates over the **Ethernet X1** interface, found in the third box from the left in the settings menu.
 2. Navigate to **Network Settings**, then to the **Ethernet X1** tab. Do not modify settings on **Ethernet X2**.
    - **Important**: If FTP is configured on the Siemens control (ETH1/ETH2/X127/X130), the IP configured in CELOS must differ from the Siemens IP to avoid network conflicts.
@@ -257,14 +269,16 @@ DMG Mori CELOS controls connect with Chatter via the network and the MTConnect p
    - **MTConnect Agent**: Enabled
 2. Take note of your **MTConnect Agent Machine ID**; you will need this later.
 
+![](images/mori/mori-mtconnect-enable.png)
+
 ### Test the Connection
 1. On your computer, open a web browser and enter the following address:
    ```
    http://YOUR_MACHINE_IP:15404/YOUR_AGENT_MACHINE_ID/probe
    ```
-- For example, if the machine's IP is `10.3.11.42` and the agent ID is `DMG_MORI_1536582168A`, you would go to:
+- For example, if the machine's IP is `10.3.11.42` and the agent ID is `DMG_MORI_1836585168A`, you would go to:
   ```
-  http://10.3.11.42:15404/DMG_MORI_1536582168A/probe
+  http://10.3.11.42:15404/DMG_MORI_1836585168A/probe
   ```
 - The agent ID is typically `DMG_MORI_` followed by your machine's serial number unless you or an applications engineer has changed it.
 2. You should see a web page confirming the MTConnect connection.

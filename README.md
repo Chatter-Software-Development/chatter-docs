@@ -50,7 +50,9 @@ For additional machine-specific support with setting up your machine's connectiv
 
 # Machine-Specific Documentation
 
-## Haas NGC &nbsp; <img src='images/branding/haas-logo.png' height='16px'> 
+## Haas NGC
+
+<img src='images/branding/haas-logo.png' height='16px'> 
 
 ### Compatibility
 Chatter is compatible with all Haas NGC machines, either over WiFi or Ethernet. **Ethernet is recommended.**
@@ -115,7 +117,10 @@ To ensure a stable connection to your Haas machine, use an Ethernet connection a
 
 By following these steps, you can ensure a stable and reliable connection to your Haas machine.
 
-## Haas Coldfire (Pre-NGC) &nbsp; <img src='images/branding/haas-logo.png' height='16px'> 
+## Haas Coldfire (Pre-NGC)
+
+<img src='images/branding/haas-logo.png' height='16px'> 
+
 ### Integration
 #### Compatibility
 Chatter is compatible with Haas machines 2008 and up. The connection is via a physical RS-232 connection to a Chatter device, so the onboard networking option is not required.
@@ -161,7 +166,9 @@ Navigate to Settings > I/O tab, and under `RS-232 PORTS`, enter the following va
 This is a known limitation of the Haas controller, it is unable to output a program number while in-cycle.
 Wait a small amount of time (~2) seconds after switching from MDI to MEM before pressing the cycle start button.
 
-## Fanuc &nbsp; <img src='images/branding/fanuc-logo.png' height='16px'> 
+## Fanuc
+
+<img src='images/branding/fanuc-logo.png' height='16px'> 
 
 ### Compatibility
 Chatter requires Fanuc machines to be networked for communication. This includes most relatively recent Fanuc i-Series controls (e.g., 0i, 18i, 31i, 32i). Machines with FOCAS capabilities are compatible.
@@ -214,7 +221,9 @@ For a more detailed breakdown of the options, reference the table below
 | 0iD              | Yes              |               |A20B-8101-0030658W  | S707   |
 | 0iF              | Yes              |               |A20B-8101-0770658Q  | S707   |
 
-## Brother &nbsp; <img src='images/branding/brother-logo.png' height='16px'> 
+## Brother
+
+<img src='images/branding/brother-logo.png' height='16px'> 
 
 ### Network Setup
 1. Navigate to the **Ethernet/FTP settings** screen on the CNC control.
@@ -237,7 +246,9 @@ For a more detailed breakdown of the options, reference the table below
 4. Restart the machine if necessary.
 5. Verify the machine's connection by pinging it from another device on the network.
 
-## DMG Mori &nbsp; <img src='images/branding/mori-logo.png' height='16px'> 
+## DMG Mori
+
+<img src='images/branding/mori-logo.png' height='16px'> 
 
 DMG Mori CELOS controls connect with Chatter via the network and the MTConnect protocol.
 
@@ -297,7 +308,9 @@ Connection options will be found under the "Connector Management" app, signified
 ### Final Step
 Your configuration is now complete! Navigate to the Chatter diagnostics page for the machine to verify that an incoming data stream is visible.
 
-## Okuma &nbsp; <img src='images/branding/okuma-logo.png' height='16px'> 
+## Okuma
+
+<img src='images/branding/okuma-logo.png' height='16px'> 
 
 ### Compatibility
 Chatter is compatible with all Okuma machines that support the MTConnect app.

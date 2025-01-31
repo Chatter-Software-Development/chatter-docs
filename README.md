@@ -318,21 +318,34 @@ Chatter is compatible with all Okuma machines that support the MTConnect app.
 ### Prerequisites
 1. The machine must be networked with a static IP. Verify the network connection by pinging the device from another computer on the network.
 2. The MTConnect app must be installed on your Okuma machine control. Refer to the [official Okuma guide](https://www.myokuma.com/stuff/contentmgr/files/0/403998be6317bc067ab0153e057ad58e/documents/4.1.3.0_installationmanual.pdf) for installation instructions. A full listing of Okuma's MTConnect documentation is available on the [Okuma App Store](https://www.myokuma.com/mtconnect-agent-adapter#app-support)
-3. Configure the machine's IP in the Chatter **"Machine Settings"** page. This should match what was entered during the signup process.
-4. Set the machine's **MTConnect Machine ID** in Chatter to match the **Device Name** in the Okuma control.
 
-   - Example Device Name: `http://[Your Machine IP]:5000/[Device Name]/probe`
-   - Replace `[Your Machine IP]` and `[Device Name]` with your machine's IP address and device name, respectively.
-![Okuma Config Screen](images/okuma/okuma-device-configuration.png)
+   **IMPORTANT:** During installation, be sure to enable the `Enable Monitoring Tags` checkbox.
 
+   ![](images/okuma/okuma-enable-tags.png)
+
+3. Verify the machine's **Device Name** in the Okuma control. The default device name is `OKUMA.MachiningCenter`, which is also pre-configured in Chatter. If you wish to change this, do so now, and update accordingly in the Chatter settings page.
+
+   ![Okuma Config Screen](images/okuma/okuma-device-configuration.png)
 
 ### Setup
 1. Complete all prerequisites.
-2. Set the machine's **MTConnect Machine ID** to the Device Name and the port to `5000` in Chatter Settings.
-3. Power on the Chatterbox or Chatter Desktop Connector.
-4. Visit the machine's **Settings** page in Chatter to verify connectivity and incoming data.
-5. Cycle through data on the machine (e.g., change mode, program, tool, etc.) to ensure live data is being received in Chatter.
+2. Configure the machine's IP in the Chatter **"Machine Settings"** page. This should match what was entered during the signup process.
+3. If you have changed the **Device Name** on the machine during setup, update the **MTConnect Machine ID** in Chatter Settings. Otherwise, leave it as the default `OKUMA.MachiningCenter`
+4. Power on the Chatterbox or Chatter Desktop Connector.
+5. Visit the machine's **Settings** page in Chatter, navigate to the **Diagnostics** tab, and verify connectivity and incoming data.
+6. Cycle through data on the machine (e.g., change mode, program, tool, etc.) to ensure live data is being received in Chatter.
 
+### Troubleshooting
+#### There is no incoming data in Chatter
+If you are not seeing incoming data in Chatter, verify the machine is properly sending data via MTConnect. From a web browser on a computer on the same network as the machine, go to: `http://[Your Machine IP]:5000/[Device Name]/current`.
+
+For Example: `http://192.168.1.194:5000/OKUMA.MachiningCenter/current`
+
+There, you should see a file with many XML data items. If you recieve a network error, revisit the steps to enable the MTConnect adapter on the machine.
+
+#### Incoming data says "UNAVAILABLE"
+Ensure that the `Enable Monitoring Tags` setting is enabled on your machine. This is typically configured during installation, but if you need to enable it after the fact, navigate to the `Tags Config Menu` on the Okuma control and check the `Enable Monitoring Tags` checkbox.
+   ![](images/okuma/okuma-tags-config-menu.png)
 
 # Network Troubleshooting
 ### Pinging
